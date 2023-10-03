@@ -86,7 +86,7 @@
         <groupId>cz.habarta.typescript-generator</groupId>
         <artifactId>typescript-generator-maven-plugin</artifactId>
         <version>2.22.595</version>
-        <executions>
+       <!--  <executions>
           <execution>
             <id>generate</id>
             <goals>
@@ -94,7 +94,7 @@
             </goals>
             <phase>process-classes</phase>
           </execution>
-        </executions>
+        </executions> -->
         <configuration>
           <jsonLibrary>jackson2</jsonLibrary>
           <classes>
