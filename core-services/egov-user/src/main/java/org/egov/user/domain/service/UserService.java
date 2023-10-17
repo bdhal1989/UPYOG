@@ -217,7 +217,7 @@ public class UserService {
      */
     public User createUser(User user, RequestInfo requestInfo) {
         user.setUuid(UUID.randomUUID().toString());
-        user.validateNewUser(createUserValidateName);
+//        user.validateNewUser(createUserValidateName);
      //   conditionallyValidateOtp(user);
         /* encrypt here */
      //   user = encryptionDecryptionUtil.encryptObject(user, "User", User.class);
@@ -231,8 +231,8 @@ public class UserService {
         user.setDefaultPasswordExpiry(defaultPasswordExpiryInDays);
         user.setTenantId(getStateLevelTenantForCitizen(user.getTenantId(), user.getType()));
         User persistedNewUser = persistNewUser(user);
-        return encryptionDecryptionUtil.decryptObject(persistedNewUser, "UserSelf", User.class, requestInfo);
-
+      //  return encryptionDecryptionUtil.decryptObject(persistedNewUser, "UserSelf", User.class, requestInfo);
+        return persistedNewUser;
         /* decrypt here  because encrypted data coming from DB*/
 
     }
